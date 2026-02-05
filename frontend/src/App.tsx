@@ -9,7 +9,8 @@ import {
   Layers, Code2, Globe, Boxes
 } from 'lucide-react';
 import Terminal from './components/Terminal';
-
+import { Header } from './components/Header';
+import { Navbar } from './components/Navbar';
 const careerTimeline = [
   {
     period: "2024 — ATUAL",
@@ -90,49 +91,11 @@ function App() {
     <div className={`min-h-screen transition-colors duration-500 ${isDarkMode ? 'bg-[#050505] text-slate-300' : 'bg-[#f4f7f9] text-slate-800'} font-sans selection:bg-blue-500/30 overflow-x-hidden`}>
       
       {/* NAVEGAÇÃO */}
-      <nav className={`fixed top-0 w-full z-50 backdrop-blur-md border-b py-4 transition-colors ${isDarkMode ? 'border-white/5 bg-black/20' : 'border-black/5 bg-white/50'}`}>
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <span className="font-mono text-[10px] font-black uppercase tracking-[0.3em] opacity-50">Lisboa.dev</span>
-          <button onClick={() => setIsDarkMode(!isDarkMode)} className={`p-2 rounded-full border transition-all ${isDarkMode ? 'border-white/10 text-yellow-400' : 'border-black/10 text-blue-600'}`}>
-            {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-        </div>
-      </nav>
+      <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
 
       {/* HEADER */}
-      <header className="max-w-7xl mx-auto px-6 pt-32 pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-8 space-y-8">
-            <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase tracking-widest">
-                Engenharia de Software & Inteligência de Negócio
-              </div>
-              <h1 className={`text-6xl md:text-7xl font-black tracking-tighter leading-none ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-                Victor Hugo <span className="opacity-40 italic font-light">Lisboa</span>
-              </h1>
-              <p className="text-2xl text-slate-500 font-medium">Data & Process Analyst</p>
-            </div>
-            <p className="text-lg text-slate-500 max-w-3xl leading-relaxed">
-              Especialista na interface entre o código e o negócio. Atuo na <span className={isDarkMode ? 'text-white' : 'text-black'}>automação de pipelines ETL</span> e na construção de dashboards estratégicos.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="mailto:prfvhlc@gmail.com" className="px-8 py-3 bg-blue-600 text-white font-bold text-sm rounded hover:bg-blue-700 shadow-lg shadow-blue-500/20 transition-all">Contato</a>
-              <a href="/CV_PTBR__VHLC.pdf" className={`px-8 py-3 font-bold text-sm rounded border transition-all flex items-center gap-2 ${isDarkMode ? 'bg-slate-900 text-white border-white/10' : 'bg-white text-slate-900 border-black/10'}`}>
-                <Download size={16} /> Currículo
-              </a>
-            </div>
-          </div>
-          <div className="lg:col-span-4">
-            <div className={`p-4 rounded-2xl border transition-all ${isDarkMode ? 'bg-slate-900/40 border-white/5' : 'bg-white border-black/5 shadow-xl shadow-black/5'}`}>
-              <img src="https://media.licdn.com/dms/image/v2/D4D03AQGOKyyN6u8sdw/profile-displayphoto-crop_800_800/B4DZkel64YIEAI-/0/1757154881543?e=1772064000&v=beta&t=wDSN49dfq7Bi3pAx5-6kjZF8VuLq0CbtbzGnycK_GLg" alt="Profile" className="w-full aspect-square object-cover rounded-xl mb-6 grayscale hover:grayscale-0 transition-all duration-700" />
-              <div className="space-y-3 opacity-70">
-                <div className="flex items-center gap-3 text-sm font-medium"><Mail size={16} className="text-blue-500" /> prfvhlc@gmail.com</div>
-                <div className="flex items-center gap-3 text-sm font-medium"><MapPin size={16} className="text-blue-500" /> Berilo, MG - Brasil</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header isDarkMode={isDarkMode} />
+      
 
       {/* ESTEIRA DE TECNOLOGIAS EM MOVIMENTO */}
       <div className={`py-10 border-y ${isDarkMode ? 'border-white/5 bg-white/[0.01]' : 'border-black/5 bg-black/[0.01]'} overflow-hidden relative`}>
