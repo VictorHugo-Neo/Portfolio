@@ -11,6 +11,8 @@ import {
 import Terminal from './components/Terminal';
 import { Header } from './components/Header';
 import { Navbar } from './components/Navbar';
+import { Belt } from './components/Belt';
+import { Skills } from './components/Skills';
 const careerTimeline = [
   {
     period: "2024 — ATUAL",
@@ -38,34 +40,7 @@ const careerTimeline = [
   }
 ];
 
-const skillGroups = [
-  {
-    title: "BI & Analytics",
-    icon: <BarChart3 className="text-blue-500" size={18} />,
-    skills: ["Power BI (DAX/M)", "Modelagem Star Schema", "SQL Avançado", "Looker Studio"]
-  },
-  {
-    title: "Engenharia & Cloud",
-    icon: <Cpu className="text-emerald-500" size={18} />,
-    skills: ["Python (FastAPI)", "Pandas/NumPy", "Docker", "AWS Fundamentals", "OpenSUSE"]
-  },
-  {
-    title: "Gestão & Processos",
-    icon: <Activity className="text-amber-500" size={18} />,
-    skills: ["BPMN (Bizagi)", "Metodologias Ágeis", "Power Automate", "Ciclo PDCA"]
-  }
-];
-
 // Ícones para a esteira de tecnologias
-const techIcons = [
-  { name: "Python", icon: <Code2 size={22} className="text-blue-500" /> },
-  { name: "SQL", icon: <Database size={22} className="text-emerald-500" /> },
-  { name: "Power BI", icon: <BarChart3 size={22} className="text-yellow-500" /> },
-  { name: "React", icon: <Globe size={22} className="text-cyan-400" /> },
-  { name: "TypeScript", icon: <Boxes size={22} className="text-blue-600" /> },
-  { name: "Docker", icon: <Layers size={22} className="text-blue-400" /> },
-  { name: "Linux", icon: <TerminalIcon size={22} className="text-orange-500" /> },
-];
 
 function App() {
   const [repos, setRepos] = useState<Repository[]>([]);
@@ -98,41 +73,10 @@ function App() {
       
 
       {/* ESTEIRA DE TECNOLOGIAS EM MOVIMENTO */}
-      <div className={`py-10 border-y ${isDarkMode ? 'border-white/5 bg-white/[0.01]' : 'border-black/5 bg-black/[0.01]'} overflow-hidden relative`}>
-        <div className="flex animate-scroll w-[max-content] gap-16 items-center">
-          {[...techIcons, ...techIcons, ...techIcons, ...techIcons].map((item, index) => (
-            <div key={index} className="flex items-center gap-4 group cursor-default">
-              <div className={`p-3 rounded-xl transition-all ${isDarkMode ? 'bg-white/5 grayscale group-hover:grayscale-0' : 'bg-white shadow-sm grayscale group-hover:grayscale-0'}`}>
-                {item.icon}
-              </div>
-              <span className={`font-mono text-[10px] font-bold tracking-widest uppercase opacity-30 group-hover:opacity-100 transition-opacity ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-                {item.name}
-              </span>
-            </div>
-          ))}
-        </div>
-        <div className={`absolute inset-y-0 left-0 w-32 z-10 pointer-events-none bg-gradient-to-r ${isDarkMode ? 'from-[#050505]' : 'from-[#f4f7f9]'} to-transparent`} />
-        <div className={`absolute inset-y-0 right-0 w-32 z-10 pointer-events-none bg-gradient-to-l ${isDarkMode ? 'from-[#050505]' : 'from-[#f4f7f9]'} to-transparent`} />
-      </div>
+      <Belt isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
 
       {/* COMPETÊNCIAS */}
-      <section className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {skillGroups.map(group => (
-          <div key={group.title} className={`p-8 rounded-2xl border transition-all ${isDarkMode ? 'bg-slate-900/20 border-white/5 hover:border-blue-500/30' : 'bg-white border-black/5 shadow-sm hover:border-blue-500/30'}`}>
-            <div className="flex items-center gap-3 mb-6">
-              <div className={`p-3 rounded-xl ${isDarkMode ? 'bg-white/5' : 'bg-slate-100'}`}>{group.icon}</div>
-              <h3 className={`font-bold uppercase tracking-widest text-[10px] ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>{group.title}</h3>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {group.skills.map(skill => (
-                <span key={skill} className={`px-3 py-1 border rounded-full text-[11px] font-semibold transition-all ${isDarkMode ? 'bg-white/5 border-white/10 text-slate-400' : 'bg-slate-50 border-black/5 text-slate-600'}`}>
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </section>
+      <Skills isDarkMode={isDarkMode} />
 
       {/* TRAJETÓRIA E TERMINAL */}
       <section className="max-w-7xl mx-auto px-6 py-24 border-t border-black/5 dark:border-white/5">
