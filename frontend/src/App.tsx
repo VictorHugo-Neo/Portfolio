@@ -1,122 +1,48 @@
-import { useEffect, useState } from 'react';
-import { fetchGithubRepo } from './services/github';
-import type { Repository } from './services/github';
-import { 
-  Github, Star, FolderCode, Database, 
-  Server, Cpu, BookOpen, Terminal as TerminalIcon,
-  BarChart3, Activity, Download, Briefcase,
-  Mail, MapPin, Linkedin, ExternalLink, Sun, Moon,
-  Layers, Code2, Globe, Boxes
-} from 'lucide-react';
+import {useState } from 'react';
 import {Terminal} from './components/Terminal';
 import { Header } from './components/Header';
 import { Navbar } from './components/Navbar';
 import { Belt } from './components/Belt';
 import { Skills } from './components/Skills';
 import { Trajectory} from './components/Trajectory'
+import { Projects } from './components/Projects';
+import { Repositories } from './components/Repositories';
+import Footer from './components/Footer';
 
-// Ícones para a esteira de tecnologias
 
 function App() {
-  const [repos, setRepos] = useState<Repository[]>([]);
-  const [filter, setFilter] = useState<'all' | 'data' | 'backend'>('all');
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  useEffect(() => {
-    fetchGithubRepo().then(setRepos).catch(console.error);
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
-
-  const filteredRepos = repos.filter(repo => {
-    if (filter === 'all') return true;
-    const isData = repo.topics.some(t => ['data', 'bi', 'analytics'].includes(t.toLowerCase()));
-    return filter === 'data' ? isData : (repo.language === 'Python' || repo.language === 'TypeScript');
-  });
-
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${isDarkMode ? 'bg-[#050505] text-slate-300' : 'bg-[#f4f7f9] text-slate-800'} font-sans selection:bg-blue-500/30 overflow-x-hidden`}>
-      
+    <div className={`min-h-screen transition-colors duration-500 
+                     ${isDarkMode ? 'bg-[#050505] text-slate-300'
+                     : 'bg-[#f4f7f9] text-slate-800'} font-sans
+                     selection:bg-blue-500/30 overflow-x-hidden`
+                    }>
       {/* NAVEGAÇÃO */}
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-
       {/* HEADER */}
       <Header isDarkMode={isDarkMode} />
-      
-
       {/* ESTEIRA DE TECNOLOGIAS EM MOVIMENTO */}
       <Belt isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
-
       {/* COMPETÊNCIAS */}
       <Skills isDarkMode={isDarkMode} />
-
       {/* TRAJETÓRIA E TERMINAL */}
-      <section className="max-w-7xl mx-auto px-6 py-24 border-t border-black/5 dark:border-white/5">
+      <section className="max-w-7xl mx-auto px-6 py-24 border-t 
+                          border-black/5 dark:border-white/5">
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <Trajectory isDarkMode={isDarkMode}/>
-          
           <div className="space-y-12">
             <Terminal isDarkMode={isDarkMode} />
-            
-            <div className={`p-8 rounded-2xl border transition-all ${isDarkMode ? 'bg-blue-500/5 border-blue-500/20' : 'bg-blue-50 border-blue-100 shadow-sm'}`}>
-              <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-4 font-black uppercase text-[10px] tracking-widest">
-                <BookOpen size={16} /> Produção Acadêmica
-              </div>
-              <h3 className={`text-lg font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Machine Learning e Segurança do Trabalho</h3>
-              <p className="text-sm opacity-60 mb-6 italic italic">Publicado nos Anais do WI-SCI do IFNMG. Foco em Visão Computacional.</p>
-              <button className={`text-xs font-bold flex items-center gap-2 hover:underline ${isDarkMode ? 'text-white' : 'text-blue-700'}`}>
-                Ver Publicação <ExternalLink size={14} />
-              </button>
-            </div>
+            <Projects isDarkMode={isDarkMode} />
           </div>
         </div>
       </section>
-
       {/* REPOSITÓRIOS GITHUB */}
-      <main className="max-w-7xl mx-auto px-6 py-24 border-t border-black/5 dark:border-white/5">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-          <div className="space-y-2">
-            <h2 className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Sistemas & Código</h2>
-            <p className="opacity-50 font-medium">Extração via GitHub API.</p>
-          </div>
-          <div className={`flex p-1 rounded-xl border ${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-slate-100 border-black/5'}`}>
-            {(['all', 'data', 'backend'] as const).map((t) => (
-              <button key={t} onClick={() => setFilter(t)} className={`px-6 py-2 text-[10px] font-black uppercase tracking-widest rounded-lg transition-all ${filter === t ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-500'}`}>
-                {t}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredRepos.map((repo) => (
-            <div key={repo.id} className={`group p-8 rounded-2xl border transition-all flex flex-col ${isDarkMode ? 'bg-slate-900/20 border-white/5 hover:border-blue-500/40' : 'bg-white border-black/5 shadow-sm hover:border-blue-500/30'}`}>
-              <div className="flex justify-between mb-8">
-                <div className={`p-3 rounded-xl transition-all ${isDarkMode ? 'bg-white/5 text-blue-500 group-hover:bg-blue-600 group-hover:text-white' : 'bg-slate-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white'}`}>
-                  <FolderCode size={20} />
-                </div>
-                <a href={repo.html_url} target="_blank" className="opacity-30 hover:opacity-100"><Github size={20} /></a>
-              </div>
-              <h3 className={`text-lg font-bold mb-2 font-mono ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>{repo.name.toLowerCase()}</h3>
-              <p className="text-sm opacity-50 mb-8 flex-grow leading-relaxed">{repo.description || "Project metadata hosted on GitHub."}</p>
-              <div className="flex items-center justify-between pt-6 border-t border-black/5 dark:border-white/5">
-                <span className="text-[10px] font-black text-blue-500 uppercase tracking-widest">{repo.language || 'Python'}</span>
-                <div className="flex items-center gap-1 text-xs opacity-40"><Star size={14} /> {repo.stargazers_count}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </main>
-
+      <Repositories isDarkMode={isDarkMode} />
       {/* FOOTER */}
-      <footer className="max-w-7xl mx-auto px-6 py-16 border-t border-black/5 dark:border-white/5 text-center">
-        <div className="text-[10px] font-mono uppercase tracking-[0.5em] opacity-30">
-          Victor Hugo Lisboa Coutinho • 2026 • OpenSUSE Environment
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
