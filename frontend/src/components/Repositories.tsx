@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchGithubRepo } from '../services/github';
 import type { Repository } from '../services/github';
-import { Github, Star, FolderCode, ExternalLink } from 'lucide-react';
+import { Github, FolderCode, ExternalLink } from 'lucide-react';
 
 interface RepositoryProps {
     isDarkMode: boolean
