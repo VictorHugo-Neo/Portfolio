@@ -10,22 +10,22 @@ const careerTimeline = [
     role: "Professor e Gestor de Projetos Técnicos",
     company: "EE Professor Jason de Morais",
     location: "Berilo, MG",
-    description: "Liderança técnica no curso de Desenvolvimento de Sistemas. Gestão de KPIs educacionais (frequência, evasão e desempenho) e mentoria em arquitetura de software.",
+    description: "Docente em Desenvolvimento de Sistemas e orientador de projetos tecnológicos. Aplico conceitos de Clean Code e Engenharia de Dados na mentoria de alunos, utilizando a análise de métricas educacionais para garantir a eficácia do aprendizado.",
     tech: ["Gestão de Indicadores", "SQL", "Liderança Técnica", "Didática"]
   },
   {
     period: "2022 — 2022",
     role: "Pesquisador em Data Science e Automação",
-    company: "IFMG - Campus Araçuaí",
+    company: "IFNMG - Campus Araçuaí",
     location: "Araçuaí, MG",
     description: "Desenvolvimento de pipelines ETL (OpenCV/TensorFlow) para captura de dados visuais e transformação em métricas quantitativas de segurança.",
     tech: ["Python", "Computer Vision", "ETL", "Pandas", "Analytics"]
   },
   {
     period: "2021 — 2024",
-    role: "Tecnologia em Análise e Desenvolvimento de Sistemas",
-    company: "IFMG",
-    location: "MG, Brasil",
+    role: "Formação em Tecnologia em Análise e Desenvolvimento de Sistemas",
+    company: "IFNMG - Campus Araçuaí",
+    location: "Araçuaí, MG",
     description: "Foco em engenharia de dados, infraestrutura e soluções sistêmicas para problemas reais.",
     tech: ["Software Engineering", "Data Structures", "Cloud Fundamentals"]
   }
@@ -33,7 +33,7 @@ const careerTimeline = [
 
 export function Trajectory({ isDarkMode }: TrajectoryProps) {
     return (
-        <div>
+        <div id = "experiencia">
             <h2 className={`text-2xl font-bold mb-12 flex items-center gap-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
                 <Briefcase size={24} className="text-blue-500" /> Trajetória Profissional
             </h2>
