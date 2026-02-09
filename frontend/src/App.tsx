@@ -8,7 +8,7 @@ import { Trajectory} from './components/Trajectory'
 import { Projects } from './components/Projects';
 import { Repositories } from './components/Repositories';
 import Footer from './components/Footer';
-
+import { About } from './components/About';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -23,6 +23,7 @@ function App() {
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       {/* HEADER */}
       <Header isDarkMode={isDarkMode} />
+      <About isDarkMode={isDarkMode} />
       {/* ESTEIRA DE TECNOLOGIAS EM MOVIMENTO */}
       <Belt isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
       {/* COMPETÊNCIAS */}
