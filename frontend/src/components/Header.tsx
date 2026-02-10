@@ -82,7 +82,7 @@ export const Header = ({ isDarkMode }: HeaderProps) => {
               </div>
 
               <div className="pt-4 border-t border-black/5 dark:border-white/5 flex justify-center gap-6 opacity-50">
-                <a href="https://github.com/VictorHugo-Neo" target="_blank" className="hover:text-blue-500 transition-colors">
+                <a href="https://www.linkedin.com/in/victor-hugo-13a350218/" target="_blank" className="hover:text-blue-500 transition-colors">
                   <Linkedin size={30} />
                 </a>
                 {/* Outros links sociais aqui */}
