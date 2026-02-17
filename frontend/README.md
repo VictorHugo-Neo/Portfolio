@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# 👨‍💻 Victor Hugo Lisboa | Portfolio v2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o repositório do meu portfólio profissional, desenvolvido para consolidar minha atuação na intersecção entre o **Desenvolvimento de Software** e a **Análise de Dados**. O projeto foi arquitetado com foco em performance, tipagem estática e design minimalista.
 
-Currently, two official plugins are available:
+**Acesse em:** [victorhugo.dev.br](https://victorhugo.dev.br)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Tecnologias Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
+* **React 18** + **Vite**: Framework e build tool de alta performance.
+* **TypeScript**: Garantia de integridade e tipagem em todo o sistema.
+* **Tailwind CSS**: Estilização utilitária com foco em responsividade e Dark Mode nativo.
+* **Lucide React**: Biblioteca de ícones vetoriais.
 
-## Expanding the ESLint configuration
+### Integrações & Infraestrutura
+* **GitHub API**: Extração em tempo real de metadados e tecnologias dos repositórios.
+* **Vercel**: Deployment contínuo e gestão de infraestrutura global (CDN).
+* **Registro.br**: Gestão de domínio personalizado (.dev.br).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Funcionalidades Principais
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Dark/Light Mode**: Persistência de tema e transições suaves via CSS Transitions.
+- **Curadoria Dinâmica**: Integração com a API do GitHub para exibir projetos específicos através de filtros de normalização de strings.
+- **Arquitetura Modular**: Divisão lógica de componentes (`Navbar`, `Header`, `About`, `Skills`, `Repositories`) para facilitar a manutenção.
+- **SEO & Performance**: Configuração de meta-tags para indexação em motores de busca e otimização de ativos estáticos.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Estrutura do Projeto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```text
+src/
+ ├── components/      # Componentes React reutilizáveis
+ ├── data/            # Constantes e configurações de dados
+ ├── services/        # Lógica de integração com APIs externas
+ ├── App.tsx          # Componente principal e orquestrador de estado
+ └── main.tsx         # Ponto de entrada da aplicação
+public/
+ └── data/            # Arquivos estáticos (PDFs, Assets)
