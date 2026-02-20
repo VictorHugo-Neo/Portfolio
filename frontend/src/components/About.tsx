@@ -1,4 +1,4 @@
-import { Database, Code2, LineChart, Cpu, Sparkles, Bot } from 'lucide-react';
+import { Database, Code2, LineChart, Cpu, Sparkles } from 'lucide-react';
 
 interface AboutProps {
   isDarkMode: boolean;
