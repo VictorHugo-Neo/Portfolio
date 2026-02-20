@@ -24,7 +24,9 @@ const languageColors: { [key: string]: string } = {
 const FEATURED_REPOS = [
     "prototype_PGO",
     "Reciplay",
-    "CHAT-CALL"
+    "CHAT-CALL",
+    "CineData",
+    "DataSet"
 ];
 
 export const Repositories = ({ isDarkMode }: RepositoryProps) => {
@@ -33,7 +35,7 @@ export const Repositories = ({ isDarkMode }: RepositoryProps) => {
     useEffect(() => {
         fetchGithubRepo()
             .then(data => {
-                // Normaliza a lista de busca para evitar erros de digitação/maiusculas
+                
                 const cleanFeaturedList = FEATURED_REPOS.map(name => name.trim().toLowerCase());
 
                 const featured = data.filter(repo =>

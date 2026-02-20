@@ -1,11 +1,15 @@
-import { Database, Code2, TerminalIcon } from "lucide-react";
+import { Database, Code2, TerminalIcon, Cpu } from "lucide-react";
 
-// Exemplo de como organizar para não repetir o About
 export const skillGroups = [
   {
     title: "Stack de Desenvolvimento",
     icon: <Code2 className="text-emerald-500" size={18} />,
     skills: ["Python (FastAPI)", "TypeScript", "React", "Docker", "Git/GitHub"]
+  },
+  {
+    title: "IA & Automação",
+    icon: <Cpu className="text-emerald-500" size={18} />,
+    skills: ["Python 3.12 (Async)","FastAPI","LangChain", "Ollama (Llama/Mistral)", "Pydantic", "Pytest"]
   },
   {
     title: "Ecossistema de Dados",
