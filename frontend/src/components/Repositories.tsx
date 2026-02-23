@@ -26,10 +26,8 @@ const LIVE_PROJECTS_URLS: { [key: string]: string } = {
 
 const FEATURED_REPOS = [
     "prototype_PGO",
-    "Reciplay",
     "CHAT-CALL",
     "CineData",
-    "DataSet",
     "SAEB_Analytics",
     "SOS_Capacete"
 ];
