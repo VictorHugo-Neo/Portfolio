@@ -60,7 +60,7 @@ export const Header = ({ isDarkMode }: HeaderProps) => {
             }`}>
             <div className="overflow-hidden rounded-xl mb-6 group">
               <img
-                src="https://media.licdn.com/dms/image/v2/D4D03AQGOKyyN6u8sdw/profile-displayphoto-crop_800_800/B4DZkel64YIEAI-/0/1757154881543?e=1772064000&v=beta&t=wDSN49dfq7Bi3pAx5-6kjZF8VuLq0CbtbzGnycK_GLg"
+                src="/data//FotoPerfil.jpeg"
                 alt="Victor Hugo Lisboa"
                 className="w-full aspect-square object-cover group-hover:scale-105 transition-all duration-700 ease-in-out"
               />
