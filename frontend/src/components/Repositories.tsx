@@ -76,7 +76,7 @@ export const Repositories = ({ isDarkMode }: RepositoryProps) => {
                     </button>
                     <button 
                         onClick={() => setFilter('live')}
-                        className={`px-6 py-2 text-[10px] font-black uppercase tracking-widest rounded-lg transition-all ${filter === 'live' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-50'}`}
+                        className={`px-6 py-2 text-[10px] font-black uppercase tracking-widest rounded-lg transition-all ${filter === 'live' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-500'}`}
                     >
                         No Ar
                     </button>
