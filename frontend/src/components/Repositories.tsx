@@ -21,7 +21,6 @@ const languageColors: { [key: string]: string } = {
 
 const LIVE_PROJECTS_URLS: { [key: string]: string } = {
     "saeb_analytics": "https://saeb-analytics.vercel.app/",
-    "sos_capacete": "https://sos-capacete.vercel.app/",
 };
 
 const FEATURED_REPOS = [
