@@ -1,24 +1,24 @@
-import { Database, Code2, TerminalIcon, Cpu } from "lucide-react";
+import { Database, Code2, LayoutDashboard, Microscope } from "lucide-react";
 
 export const skillGroups = [
   {
-    title: "Stack de Desenvolvimento",
-    icon: <Code2 className="text-emerald-500" size={18} />,
-    skills: ["Python (FastAPI)", "TypeScript", "React", "Docker", "Git/GitHub"]
+    title: "Desenvolvimento & Software",
+    icon: <Code2 className="text-blue-500" size={18} />,
+    skills: ["Python (FastAPI)", "TypeScript", "React", "SQL / PostgreSQL", "Docker / Git"]
   },
   {
-    title: "IA & Automação",
-    icon: <Cpu className="text-emerald-500" size={18} />,
-    skills: ["Python 3.12 (Async)","FastAPI","LangChain", "Ollama (Llama/Mistral)", "Pydantic", "Pytest"]
+    title: "Análise & Business Intelligence",
+    icon: <LayoutDashboard className="text-amber-500" size={18} />,
+    skills: ["Power BI (DAX)", "Excel Avançado", "Pandas / NumPy", "Google Looker Studio", "Dashboards"]
   },
   {
-    title: "Ecossistema de Dados",
-    icon: <Database className="text-blue-500" size={18} />,
-    skills: ["PostgreSQL", "SQL Avançado", "Pandas/NumPy", "Power BI", "ETL Pipelines"]
+    title: "Gestão & Inovação",
+    icon: <Database className="text-emerald-500" size={18} />,
+    skills: ["Metodologias Ágeis", "Gestão de KPIs", "BPMN (Processos)", "Scrum / Kanban", "Documentação"]
   },
   {
-    title: "Ambiente & Gestão",
-    icon: <TerminalIcon className="text-amber-500" size={18} />,
-    skills: ["Linux", "AWS Cloud", "BPMN", "Metodologias Ágeis", "KPI Management"]
+    title: "Pesquisa & IA Aplicada",
+    icon: <Microscope className="text-purple-500" size={18} />,
+    skills: ["LangChain", "Automação Python", "Visão Computacional", "Ollama (IA Local)", "P&D Técnico"]
   }
 ];
