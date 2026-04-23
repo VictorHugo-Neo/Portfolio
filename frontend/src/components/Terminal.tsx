@@ -6,39 +6,51 @@ interface TerminalProps {
 }
 
 export const Terminal = ({isDarkMode} : TerminalProps) => {
-  const [text] = useState("vhlc --status -all");
+  // Simulando um comando que faz sentido com sua rotina de dev e professor
+  const [text] = useState("sudo zypper info vhlc-dev");
 
   return (
-    <div>
-      <h2 className={`text-2xl font-bold mb-12 flex items-center gap-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-        <TerminalIcon size={24} className="text-emerald-500" /> Shell Environment
+    <div id="terminal" className="py-12">
+      <h2 className={`text-2xl font-bold mb-8 flex items-center gap-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+        <TerminalIcon size={24} className="text-emerald-500" /> System Environment
       </h2>
-      <div className="rounded-xl overflow-hidden shadow-2xl bg-black ring-1 ring-white/10">
-        
-        <div className="p-1">
-          <div className="w-full max-w-2xl mx-auto font-mono text-sm bg-black/40 rounded-lg border border-slate-700 shadow-2xl overflow-hidden mb-12">
-            <div className="flex items-center gap-2 px-4 py-2 bg-slate-800/50 border-b border-slate-700">
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-500/50" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-                <div className="w-3 h-3 rounded-full bg-green-500/50" />
-              </div>
-              
-            </div>
-            <div className="p-4 space-y-2">
-              <div className="flex gap-2">
-                <span className="text-brand-accent">➜</span>
-                <span className="text-brand-blue">~</span>
-                <span className="text-white">{text}</span>
-              </div>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-slate-400">
-                <div><span className="text-brand-blue">ROLE:</span> Engenheiro de Dados</div>
-                <div><span className="text-brand-blue">LOC:</span> MG, Brasil</div>
-                <div><span className="text-brand-blue">EXP:</span> Professor & Dev</div>
-                <div><span className="text-brand-blue">STACK:</span> Python</div>
-              </div>
-              <div className="text-brand-accent/70 animate-pulse mt-2">_</div>
-            </div>
+      
+      <div className="w-full max-w-2xl font-mono text-sm bg-[#1c1c1c] rounded-xl border border-white/10 shadow-2xl overflow-hidden">
+        {/* Barra Superior do Terminal */}
+        <div className="flex items-center justify-between px-4 py-2 bg-[#2d2d2d] border-b border-white/5">
+          <div className="flex gap-2">
+            <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+            <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+            <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
+          </div>
+          <span className="text-[10px] text-slate-400 font-bold tracking-widest uppercase">openSUSE — zsh</span>
+        </div>
+
+        {/* Conteúdo do Shell */}
+        <div className="p-5 space-y-3">
+          <div className="flex gap-2">
+            <span className="text-emerald-500 font-bold">victorhugo@leap:</span>
+            <span className="text-blue-400">~</span>
+            <span className="text-white">{text}</span>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1 text-slate-300">
+            <div><span className="text-emerald-500/80">Title:</span> Sistemas & Dados</div>
+            <div><span className="text-emerald-500/80">Status:</span> Graduado / Pós-Graduando</div>
+            <div><span className="text-emerald-500/80">Expertise:</span> Dev & Professor</div>
+            <div><span className="text-emerald-500/80">Focus:</span> Gestão de Projetos</div>
+            <div><span className="text-emerald-500/80">OS:</span> openSUSE Leap 15.6</div>
+            <div><span className="text-emerald-500/80">Location:</span> Berilo, MG</div>
+          </div>
+
+          <div className="pt-2 text-slate-500 text-xs">
+            # Verificando dependências de inovação...
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="text-emerald-500">➜</span>
+            <span className="text-blue-400">~</span>
+            <div className="w-2 h-4 bg-emerald-500 animate-pulse" />
           </div>
         </div>
       </div>
