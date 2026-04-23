@@ -6,28 +6,44 @@ interface TrajectoryProps {
 
 const careerTimeline = [
   {
+    period: "2026 — ATUAL",
+    role: "Pós-Graduação em Gestão de Projetos e Inovação",
+    company: "IFNMG",
+    location: "Araçuaí, MG",
+    description: "Especialização focada no ciclo de vida de projetos e no desenvolvimento de soluções inovadoras para demandas regionais.",
+    tech: ["Gestão", "Inovação", "Estratégia"]
+  },
+  {
     period: "2024 — ATUAL",
-    role: "Professor e Gestor de Projetos Técnicos",
+    role: "Professor de Ensino Técnico (Sistemas)",
     company: "EE Professor Jason de Morais",
     location: "Berilo, MG",
-    description: "Docente em Desenvolvimento de Sistemas e orientador de projetos tecnológicos. Aplico conceitos de Clean Code e Engenharia de Dados na mentoria de alunos, utilizando a análise de métricas educacionais para garantir a eficácia do aprendizado.",
-    tech: ["Gestão de Indicadores", "SQL", "Liderança Técnica", "Didática"]
+    description: "Docente responsável pelas disciplinas de Back-End e Algoritmos. Mentor técnico em projetos práticos, utilizando metodologias ágeis para organização das turmas e análise de indicadores de desempenho.",
+    tech: ["Liderança", "Didática", "Scrum", "Python"]
+  },
+  {
+    period: "2023 — ATUAL",
+    role: "Desenvolvedor de Sistemas (Freelancer)",
+    company: "Trabalho Autônomo",
+    location: "Remoto",
+    description: "Desenvolvimento de sistemas web e automações sob demanda. Foco em entender a necessidade do cliente e entregar soluções funcionais como APIs e integrações de dados.",
+    tech: ["Full-Stack", "FastAPI", "React", "SQL"]
   },
   {
     period: "2022 — 2022",
     role: "Pesquisador em Data Science e Automação",
-    company: "IFNMG - Campus Araçuaí",
+    company: "IFNMG - Bolsista P&D",
     location: "Araçuaí, MG",
-    description: "Desenvolvimento de pipelines ETL (OpenCV/TensorFlow) para captura de dados visuais e transformação em métricas quantitativas de segurança.",
-    tech: ["Python", "Computer Vision", "ETL", "Pandas", "Analytics"]
+    description: "Pesquisa aplicada na coleta automatizada de dados e uso de visão computacional para geração de métricas de conformidade em tempo real.",
+    tech: ["Data Science", "Python", "OpenCV", "Analytics"]
   },
   {
     period: "2021 — 2024",
-    role: "Formação em Tecnologia em Análise e Desenvolvimento de Sistemas",
-    company: "IFNMG - Campus Araçuaí",
+    role: "Graduação em Análise e Desenvolvimento de Sistemas",
+    company: "IFNMG",
     location: "Araçuaí, MG",
-    description: "Foco em engenharia de dados, infraestrutura e soluções sistêmicas para problemas reais.",
-    tech: ["Software Engineering", "Data Structures", "Cloud Fundamentals"]
+    description: "Formação focada na resolução de problemas reais através da tecnologia, engenharia de dados e infraestrutura.",
+    tech: ["Engenharia", "Dados", "Lógica"]
   }
 ];
 

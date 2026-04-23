@@ -6,7 +6,7 @@ interface SkillsProps {
 
 export const Skills = ({ isDarkMode }: SkillsProps) => {
     return (
-        <section id="experiencia" className="max-w-7xl mx-auto px-6 py-24 scroll-mt-24">
+        <section id="habilidades" className="max-w-7xl mx-auto px-6 py-24 scroll-mt-24">
             {/* Título centralizado com linhas expansivas */}
             <div className="flex items-center justify-center gap-8 mb-20">
                 <div className="h-[1px] w-1/4 bg-gradient-to-r from-transparent to-black/10 dark:to-white/10"></div>
