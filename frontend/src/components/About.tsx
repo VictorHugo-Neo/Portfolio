@@ -1,4 +1,4 @@
-import { Database, Code2, LineChart, Cpu, Sparkles } from 'lucide-react';
+import { Database, Code2, LineChart, Cpu, Sparkles, BookOpen } from 'lucide-react';
 
 interface AboutProps {
   isDarkMode: boolean;
@@ -10,63 +10,64 @@ export const About = ({ isDarkMode }: AboutProps) => {
 
       {/* CABEÇALHO CENTRALIZADO */}
       <div className="flex flex-col items-center text-center mb-20 space-y-6">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold uppercase tracking-widest">
-          <Sparkles size={12} /> Engenharia de Software ∩ IA Generativa
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase tracking-widest">
+          <Sparkles size={12} /> Desenvolvimento de Sistemas ∩ Gestão de Projetos
         </div>
         <h2 className={`text-4xl md:text-5xl font-black tracking-tighter ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-          Sistemas Inteligentes & <span className="text-blue-600">Estratégia de Dados</span>
+          Soluções Tecnológicas & <span className="text-blue-600">Inovação Prática</span>
         </h2>
         <p className="text-lg leading-relaxed text-slate-500 max-w-3xl">
-          Especialista em construir a ponte entre o dado bruto e a decisão automatizada. Desenvolvo desde
-          <span className={isDarkMode ? 'text-white' : 'text-slate-900 font-medium'}> arquiteturas escaláveis</span> até
-          <span className={isDarkMode ? 'text-white' : 'text-slate-900 font-medium'}> agentes baseados em LLMs</span>, integrando IA para resolver problemas complexos de negócio e processos.
+          Desenvolvedor e professor apaixonado por transformar tecnologia em ferramentas úteis. Unindo
+          <span className={isDarkMode ? 'text-white' : 'text-slate-900 font-medium'}> desenvolvimento full-stack</span>, 
+          <span className={isDarkMode ? 'text-white' : 'text-slate-900 font-medium'}> análise de dados</span> e 
+          <span className={isDarkMode ? 'text-white' : 'text-slate-900 font-medium'}> gestão ágil</span> para criar sistemas que otimizam processos e facilitam o aprendizado.
         </p>
       </div>
 
       {/* GRID DE CARDS EMBAIXO */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-        {/* Card: Software Engineering */}
+        {/* Card: Desenvolvimento Full-Stack */}
         <div className={`p-8 rounded-2xl border transition-all hover:-translate-y-2 duration-300 ${isDarkMode ? 'bg-slate-900/40 border-white/5 hover:border-blue-500/30' : 'bg-white border-black/5 shadow-sm hover:border-blue-500/30'}`}>
           <div className="p-3 w-fit rounded-xl bg-blue-500/10 text-blue-500 mb-6">
             <Code2 size={24} />
           </div>
-          <h3 className={`text-lg font-bold mb-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Engenharia</h3>
+          <h3 className={`text-lg font-bold mb-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Desenvolvimento</h3>
           <p className="text-xs text-slate-500 leading-relaxed">
-            Arquiteturas modernas com FastAPI e React. Foco em sistemas que servem como base sólida para integração de inteligência e dados.
+            Criação de sistemas web e APIs modernas com Python (FastAPI) e React. Foco em código limpo, seguro e funcional para resolver problemas reais.
           </p>
         </div>
 
-        {/* Card: Data & ETL */}
+        {/* Card: Dados & BI */}
         <div className={`p-8 rounded-2xl border transition-all hover:-translate-y-2 duration-300 ${isDarkMode ? 'bg-slate-900/40 border-white/5 hover:border-amber-500/30' : 'bg-white border-black/5 shadow-sm hover:border-amber-500/30'}`}>
           <div className="p-3 w-fit rounded-xl bg-amber-500/10 text-amber-500 mb-6">
             <Database size={24} />
           </div>
-          <h3 className={`text-lg font-bold mb-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Engenharia de Dados</h3>
+          <h3 className={`text-lg font-bold mb-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Análise de Dados</h3>
           <p className="text-xs text-slate-500 leading-relaxed">
-            Pipelines ETL automatizados e modelagem Star Schema. Transformação de dados brutos em conhecimento acionável.
+            Tratamento de dados e criação de dashboards em Power BI. Transformação de informações brutas em indicadores (KPIs) para suporte à decisão.
           </p>
         </div>
 
-        {/* Card: LLM & Local AI */}
+        {/* Card: Gestão & Projetos */}
         <div className={`p-8 rounded-2xl border transition-all hover:-translate-y-2 duration-300 ${isDarkMode ? 'bg-slate-900/40 border-white/5 hover:border-emerald-500/30' : 'bg-white border-black/5 shadow-sm hover:border-emerald-500/30'}`}>
           <div className="p-3 w-fit rounded-xl bg-emerald-500/10 text-emerald-500 mb-6">
             <Cpu size={24} />
           </div>
-          <h3 className={`text-lg font-bold mb-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>IA & Orquestração</h3>
+          <h3 className={`text-lg font-bold mb-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Gestão & Ágil</h3>
           <p className="text-xs text-slate-500 leading-relaxed">
-            Desenvolvimento de sistemas com LangChain e execução local via Ollama (Llama 3.2). Foco em privacidade, processamento assíncrono e agentes autônomos.
+            Aplicação de metodologias como Kanban e Scrum para organizar fluxos de trabalho, garantindo prazos e qualidade na entrega de projetos.
           </p>
         </div>
 
-        {/* Card: BI & Analytics */}
+        {/* Card: Educação & Mentoria */}
         <div className={`p-8 rounded-2xl border transition-all hover:-translate-y-2 duration-300 ${isDarkMode ? 'bg-slate-900/40 border-white/5 hover:border-purple-500/30' : 'bg-white border-black/5 shadow-sm hover:border-purple-500/30'}`}>
           <div className="p-3 w-fit rounded-xl bg-purple-500/10 text-purple-500 mb-6">
-            <LineChart size={24} />
+            <BookOpen size={24} />
           </div>
-          <h3 className={`text-lg font-bold mb-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>BI & Processos</h3>
+          <h3 className={`text-lg font-bold mb-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>Ensino Técnico</h3>
           <p className="text-xs text-slate-500 leading-relaxed">
-            Gestão baseada em indicadores (KPIs) e dashboards em Power BI para otimização de performance e eficiência operacional.
+            Experiência em simplificar conceitos complexos, atuando como professor e mentor técnico para formar novos talentos na área de tecnologia.
           </p>
         </div>
 
