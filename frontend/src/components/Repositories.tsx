@@ -28,7 +28,8 @@ const FEATURED_REPOS = [
     "CHAT-CALL",
     "CineData",
     "SAEB_Analytics",
-    "SOS_Capacete"
+    "SOS_Capacete",
+    "MatDiscreta_Pratica"
 ];
 
 export const Repositories = ({ isDarkMode }: RepositoryProps) => {
