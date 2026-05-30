@@ -21,6 +21,7 @@ const languageColors: { [key: string]: string } = {
 
 const LIVE_PROJECTS_URLS: { [key: string]: string } = {
     "saeb_analytics": "https://saeb-analytics.vercel.app/",
+    "matdiscreta_pratica": "https://www.numlab.com.br/"
 };
 
 const FEATURED_REPOS = [
