@@ -1,37 +1,13 @@
 import { useEffect, useState } from 'react';
 import { fetchGithubRepo } from '../services/github';
 import type { Repository } from '../services/github';
-import { Github, FolderCode, ExternalLink, Globe } from 'lucide-react';
+import { Github, FolderCode, ExternalLink, Globe, MoveHorizontal } from 'lucide-react';
 
 interface RepositoryProps {
     isDarkMode: boolean
 }
 
-const languageColors: { [key: string]: string } = {
-    Python: "text-blue-500",
-    TypeScript: "text-blue-600",
-    JavaScript: "text-yellow-500",
-    HTML: "text-orange-600",
-    CSS: "text-purple-500",
-    React: "text-cyan-400",
-    FastAPI: "text-emerald-500",
-    PostgreSQL: "text-indigo-400",
-    default: "text-slate-400"
-};
-
-const LIVE_PROJECTS_URLS: { [key: string]: string } = {
-    "saeb_analytics": "https://saeb-analytics.vercel.app/",
-    "matdiscreta_pratica": "https://www.numlab.com.br/"
-};
-
-const FEATURED_REPOS = [
-    "prototype_PGO",
-    "CHAT-CALL",
-    "CineData",
-    "SAEB_Analytics",
-    "SOS_Capacete",
-    "MatDiscreta_Pratica"
-];
+import { languageColors, LIVE_PROJECTS_URLS, FEATURED_REPOS } from '../data/githubConfig';
 
 export const Repositories = ({ isDarkMode }: RepositoryProps) => {
     const [repos, setRepos] = useState<Repository[]>([]);
@@ -55,9 +31,9 @@ export const Repositories = ({ isDarkMode }: RepositoryProps) => {
     });
 
     return (
-        <main id="projetos" className="max-w-7xl mx-auto px-6 py-24 border-t border-black/5 dark:border-white/5">
+        <main id="projetos" className="max-w-7xl mx-auto px-6 py-12 md:py-24 border-t border-black/5 dark:border-white/5">
             
-            <div className="flex flex-col items-center text-center mb-16 space-y-6">
+            <div className="flex flex-col items-center text-center mb-12 md:mb-16 space-y-6">
                 <div className="space-y-4">
                     <h2 className={`text-4xl font-bold tracking-tighter ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
                         Sistemas & Código
@@ -67,7 +43,6 @@ export const Repositories = ({ isDarkMode }: RepositoryProps) => {
                     </p>
                 </div>
 
-                {/* FILTRO CENTRALIZADO */}
                 <div className={`flex p-1 rounded-xl border ${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-slate-100 border-black/5'}`}>
                     <button 
                         onClick={() => setFilter('all')}
@@ -84,19 +59,19 @@ export const Repositories = ({ isDarkMode }: RepositoryProps) => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible scrollbar-hide">
                 {filteredRepos.map((repo) => {
                     const liveUrl = LIVE_PROJECTS_URLS[repo.name.toLowerCase().trim()];
                     
                     return (
                         <div
                             key={repo.id}
-                            className={`group p-8 rounded-2xl border transition-all flex flex-col relative ${isDarkMode
+                            className={`min-w-[85vw] md:min-w-0 snap-center group p-6 md:p-8 rounded-2xl border transition-all flex flex-col relative ${isDarkMode
                                 ? 'bg-slate-900/20 border-white/5 hover:border-blue-500/40'
                                 : 'bg-white border-black/5 shadow-sm hover:border-blue-500/30'
                             }`}
                         >
-                            <div className="flex justify-between mb-8">
+                            <div className="flex justify-between mb-6 md:mb-8">
                                 <div className={`p-3 rounded-xl transition-all ${isDarkMode ? 'bg-white/5 text-blue-500' : 'bg-slate-50 text-blue-600'}`}>
                                     {liveUrl ? <Globe size={20} /> : <FolderCode size={20} />}
                                 </div>
@@ -145,6 +120,11 @@ export const Repositories = ({ isDarkMode }: RepositoryProps) => {
                         </div>
                     );
                 })}
+            </div>
+            
+            <div className="flex md:hidden justify-center items-center gap-2 mt-6 text-slate-500 opacity-60">
+                <MoveHorizontal size={14} />
+                <span className="text-[10px] font-bold uppercase tracking-widest">Deslize para ver mais</span>
             </div>
 
             <div className="mt-16 text-center">

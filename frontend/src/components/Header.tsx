@@ -6,13 +6,12 @@ interface HeaderProps {
 
 export const Header = ({ isDarkMode }: HeaderProps) => {
   return (
-    <header className="max-w-7xl mx-auto px-6 pt-32 pb-16">
+    <header className="max-w-7xl mx-auto px-6 pt-24 lg:pt-32 pb-12 lg:pb-16">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Lado Esquerdo: Textos e CTA */}
-        <div className="lg:col-span-8 space-y-8">
+        <div className="lg:col-span-8 space-y-6 lg:space-y-8">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase tracking-widest">
-              Desenvolvedor de Sistemas & Dados | Gestão de Projetos
+              Desenvolvedor Full-Stack & Analista de Dados
             </div>
 
             <h1 className={`text-6xl md:text-7xl font-black tracking-tighter leading-none ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
@@ -21,11 +20,11 @@ export const Header = ({ isDarkMode }: HeaderProps) => {
           </div>
 
           <p className="text-lg text-slate-500 max-w-3xl leading-relaxed">
-            Unindo a prática do
-            <span className={isDarkMode ? 'text-white' : 'text-black font-medium'}> desenvolvimento de software </span>
-            à eficiência da
-            <span className={isDarkMode ? 'text-white' : 'text-black font-medium'}> gestão e análise de dados. </span>
-            Atuo na criação de sistemas funcionais e na organização de processos, transformando fluxos de informação em indicadores claros para suporte à decisão.
+            Construo
+            <span className={isDarkMode ? 'text-white' : 'text-black font-medium'}> aplicações web </span>
+            e analiso
+            <span className={isDarkMode ? 'text-white' : 'text-black font-medium'}> dados. </span>
+            Meu foco é criar sistemas eficientes e transformar dados complexos em informações claras e úteis.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -50,7 +49,6 @@ export const Header = ({ isDarkMode }: HeaderProps) => {
           </div>
         </div>
 
-        {/* Lado Direito: Card de Perfil */}
         <div className="lg:col-span-4">
           <div className={`p-4 rounded-2xl border transition-all duration-500 ${isDarkMode
               ? 'bg-slate-900/40 border-white/5 shadow-2xl shadow-black'

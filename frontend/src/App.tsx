@@ -19,20 +19,15 @@ function App() {
                      : 'bg-[#f4f7f9] text-slate-800'} font-sans
                      selection:bg-blue-500/30 overflow-x-hidden`
                     }>
-      {/* NAVEGAÇÃO */}
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-      {/* HEADER */}
       <Header isDarkMode={isDarkMode} />
       <About isDarkMode={isDarkMode} />
-      {/* ESTEIRA DE TECNOLOGIAS EM MOVIMENTO */}
       <Belt isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
-      {/* COMPETÊNCIAS */}
       <Skills isDarkMode={isDarkMode} />
-      {/* TRAJETÓRIA E TERMINAL */}
-      <section className="max-w-7xl mx-auto px-6 py-24 border-t 
+      <section className="max-w-7xl mx-auto px-6 py-12 md:py-24 border-t 
                           border-black/5 dark:border-white/5">
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           <Trajectory isDarkMode={isDarkMode}/>
           <div className="space-y-12">
             <Terminal isDarkMode={isDarkMode} />
@@ -40,9 +35,7 @@ function App() {
           </div>
         </div>
       </section>
-      {/* REPOSITÓRIOS GITHUB */}
       <Repositories isDarkMode={isDarkMode} />
-      {/* FOOTER */}
       <Footer />
     </div>
   );

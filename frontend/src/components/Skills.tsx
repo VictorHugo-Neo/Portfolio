@@ -6,9 +6,8 @@ interface SkillsProps {
 
 export const Skills = ({ isDarkMode }: SkillsProps) => {
     return (
-        <section id="habilidades" className="max-w-7xl mx-auto px-6 py-24 scroll-mt-24">
-            {/* Título centralizado com linhas expansivas */}
-            <div className="flex items-center justify-center gap-8 mb-20">
+        <section id="habilidades" className="max-w-7xl mx-auto px-6 py-12 md:py-24 scroll-mt-24">
+            <div className="flex items-center justify-center gap-8 mb-12 md:mb-20">
                 <div className="h-[1px] w-1/4 bg-gradient-to-r from-transparent to-black/10 dark:to-white/10"></div>
                 <span className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 whitespace-nowrap">
                     Stack Tecnológica
@@ -16,14 +15,12 @@ export const Skills = ({ isDarkMode }: SkillsProps) => {
                 <div className="h-[1px] w-1/4 bg-gradient-to-l from-transparent to-black/10 dark:to-white/10"></div>
             </div>
 
-            {/* Grid ajustado para centralização total */}
-            <div className="flex flex-wrap justify-center gap-y-16 gap-x-12 lg:gap-x-24">
+            <div className="flex flex-wrap justify-center gap-y-12 md:gap-y-16 gap-x-12 lg:gap-x-24">
                 {skillGroups.map(group => (
                     <div 
                         key={group.title} 
-                        className="flex flex-col items-center text-center space-y-8 w-full sm:w-[300px]"
+                        className="flex flex-col items-center text-center space-y-6 md:space-y-8 w-full sm:w-[300px]"
                     >
-                        {/* Container do Ícone */}
                         <div className="flex flex-col items-center space-y-4">
                             <div className={`p-5 rounded-3xl transition-all duration-500 hover:rotate-6 hover:scale-110 ${
                                 isDarkMode 
@@ -39,7 +36,6 @@ export const Skills = ({ isDarkMode }: SkillsProps) => {
                             </h3>
                         </div>
                         
-                        {/* Badges centralizadas com controle de largura */}
                         <div className="flex flex-wrap justify-center gap-2">
                             {group.skills.map(skill => (
                                 <span 
