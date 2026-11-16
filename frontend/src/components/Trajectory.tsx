@@ -1,28 +1,95 @@
-import { Briefcase } from "lucide-react";
+import { useState } from "react";
+import { Briefcase, GraduationCap } from "lucide-react";
+import { servicesTimeline, educationTimeline } from "../data/trajectoryData";
+import { TimelineCard } from "./TimelineCard";
 
-interface TrajectoryProps {
-    isDarkMode: boolean
-}
+export const Trajectory = () => {
+  const [mobileTab, setMobileTab] = useState<'services' | 'education'>('services');
 
-import { careerTimeline } from "../data/trajectoryData";
+  return (
+    <section 
+      id="trajetoria" 
+      className="scroll-mt-20 max-w-6xl mx-auto px-6 py-10 sm:py-16 lg:py-24"
+    >
+      <span id="experiencia" className="scroll-mt-20" aria-hidden="true" />
+      <span id="servicos" className="scroll-mt-20" aria-hidden="true" />
+      <span id="estudos" className="scroll-mt-20" aria-hidden="true" />
 
-export function Trajectory({ isDarkMode }: TrajectoryProps) {
-    return (
-        <div id = "experiencia">
-            <h2 className={`text-2xl font-bold mb-8 md:mb-12 flex items-center gap-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-                <Briefcase size={24} className="text-blue-500" /> Trajetória Profissional
-            </h2>
-            <div className="space-y-8 md:space-y-12 relative border-l border-black/5 dark:border-white/5 ml-3">
-                {careerTimeline.map((item, i) => (
-                    <div key={i} className="relative pl-10 group">
-                        <div className="absolute w-2 h-2 bg-blue-500 rounded-full -left-1.25 top-2"></div>
-                        <span className="text-[10px] font-mono font-bold text-blue-500 uppercase">{item.period}</span>
-                        <h3 className={`text-lg font-bold mt-1 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>{item.role}</h3>
-                        <p className="text-sm font-medium opacity-60 mb-4">{item.company}</p>
-                        <p className="text-sm opacity-50 leading-relaxed mb-4">{item.description}</p>
-                    </div>
-                ))}
+      <div className="space-y-6 sm:space-y-10">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6">
+          <div className="space-y-2 sm:space-y-3 max-w-xl">
+            <div className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+              <Briefcase size={15} />
+              Carreira & Academia
             </div>
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              Serviços & Estudos
+            </h2>
+            <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300">
+              Minha atuação prática entre desenvolvimento de software e ensino técnico, aliada a uma sólida base acadêmica contínua.
+            </p>
+          </div>
+
+          <div className="lg:hidden flex p-1 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 w-fit">
+            <button
+              onClick={() => setMobileTab('services')}
+              className={`min-h-[34px] px-3.5 py-1 text-xs font-semibold rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
+                mobileTab === 'services'
+                  ? 'bg-blue-600 text-white shadow-xs'
+                  : 'text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
+              }`}
+            >
+              Atuação Profissional ({servicesTimeline.length})
+            </button>
+            <button
+              onClick={() => setMobileTab('education')}
+              className={`min-h-[34px] px-3.5 py-1 text-xs font-semibold rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
+                mobileTab === 'education'
+                  ? 'bg-emerald-600 text-white shadow-xs'
+                  : 'text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
+              }`}
+            >
+              Formação ({educationTimeline.length})
+            </button>
+          </div>
         </div>
-    )
-}
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14">
+          <div className={`space-y-4 sm:space-y-6 ${mobileTab !== 'services' ? 'hidden lg:block' : 'block'}`}>
+            <div className="flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-white/10">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                <Briefcase size={16} />
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+                Serviços & Atuação
+              </h3>
+            </div>
+
+            <div className="relative border-l-2 border-slate-200 dark:border-white/10 ml-2 sm:ml-4 space-y-6 sm:space-y-8">
+              {servicesTimeline.map((item, index) => (
+                <TimelineCard key={`${item.role}-${index}`} item={item} accentColor="blue" />
+              ))}
+            </div>
+          </div>
+
+          <div className={`space-y-4 sm:space-y-6 ${mobileTab !== 'education' ? 'hidden lg:block' : 'block'}`}>
+            <div className="flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-white/10">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                <GraduationCap size={16} />
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+                Estudos & Formação
+              </h3>
+            </div>
+
+            <div className="relative border-l-2 border-slate-200 dark:border-white/10 ml-2 sm:ml-4 space-y-6 sm:space-y-8">
+              {educationTimeline.map((item, index) => (
+                <TimelineCard key={`${item.role}-${index}`} item={item} accentColor="emerald" />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

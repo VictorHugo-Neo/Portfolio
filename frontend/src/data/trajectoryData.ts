@@ -1,42 +1,54 @@
-export const careerTimeline = [
-  {
-    period: "2026 — ATUAL",
-    role: "Pós-Graduação em Gestão de Projetos e Inovação",
-    company: "IFNMG",
-    location: "Araçuaí, MG",
-    description: "Especialização focada na gestão ágil de projetos e inovação tecnológica regional.",
-    tech: ["Gestão", "Inovação", "Estratégia"]
-  },
+export interface TimelineItem {
+  period: string;
+  role: string;
+  company: string;
+  location: string;
+  description: string;
+  tech: string[];
+}
+
+export const servicesTimeline: TimelineItem[] = [
   {
     period: "2024 — ATUAL",
     role: "Professor de Ensino Técnico (Sistemas)",
     company: "EE Professor Jason de Morais",
     location: "Berilo, MG",
-    description: "Professor de Back-End e Algoritmos. Mentoria técnica focada em projetos práticos e metodologias ágeis.",
-    tech: ["Liderança", "Didática", "Scrum", "Python"]
+    description: "Docência em Back-End e Algoritmos. Mentoria técnica orientada a projetos práticos de software, lógica de programação e metodologias ágeis.",
+    tech: ["Didática", "Algoritmos", "Python", "Back-End", "Scrum"]
   },
   {
     period: "2023 — ATUAL",
     role: "Desenvolvedor Full-Stack (Freelancer)",
-    company: "Trabalho Autônomo",
+    company: "Trabalho Autônomo & Consultoria",
     location: "Remoto",
-    description: "Desenvolvimento de aplicações web, APIs e automações focadas em resolver problemas de negócios reais.",
-    tech: ["Full-Stack", "FastAPI", "React", "SQL"]
+    description: "Concepção e desenvolvimento de aplicações web completas, APIs RESTful e automações sob medida, focando em estabilidade, segurança e valor de negócio.",
+    tech: ["Full-Stack", "FastAPI", "Python", "React", "TypeScript", "SQL"]
   },
   {
     period: "2022 — 2022",
-    role: "Pesquisador em Data Science e Automação",
-    company: "IFNMG - Bolsista P&D",
+    role: "Pesquisador em Computação Aplicada",
+    company: "IFNMG — Bolsista P&D",
     location: "Araçuaí, MG",
-    description: "Uso de visão computacional e automação com Python para coletar e analisar métricas em tempo real.",
-    tech: ["Data Science", "Python", "OpenCV", "Analytics"]
+    description: "Desenvolvimento de soluções com Visão Computacional e automação em Python para coleta, monitoramento e análise de métricas em tempo real.",
+    tech: ["Python", "Visão Computacional", "OpenCV", "Machine Learning"]
+  }
+];
+
+export const educationTimeline: TimelineItem[] = [
+  {
+    period: "2026 — ATUAL",
+    role: "Pós-Graduação em Gestão de Projetos e Inovação",
+    company: "IFNMG",
+    location: "Araçuaí, MG",
+    description: "Especialização com foco em gestão ágil, liderança técnica, transformação digital e inovação em processos e produtos tecnológicos.",
+    tech: ["Gestão Ágil", "Inovação", "Estratégia", "Liderança"]
   },
   {
     period: "2021 — 2024",
     role: "Graduação em Análise e Desenvolvimento de Sistemas",
     company: "IFNMG",
     location: "Araçuaí, MG",
-    description: "Foco em engenharia de software, banco de dados e infraestrutura.",
-    tech: ["Engenharia", "Dados", "Lógica"]
+    description: "Formação superior completa em engenharia de software, modelagem de banco de dados, arquitetura de sistemas e redes.",
+    tech: ["Engenharia de Software", "Banco de Dados", "Estruturas de Dados", "Arquitetura"]
   }
 ];

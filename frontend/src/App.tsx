@@ -1,43 +1,42 @@
-import {useState } from 'react';
-import {Terminal} from './components/Terminal';
-import { Header } from './components/Header';
+import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
-import { Belt } from './components/Belt';
-import { Skills } from './components/Skills';
-import { Trajectory} from './components/Trajectory'
-import { Projects } from './components/Projects';
-import { Repositories } from './components/Repositories';
-import Footer from './components/Footer';
+import { Header } from './components/Header';
 import { About } from './components/About';
+import { Repositories } from './components/Repositories';
+import { Trajectory } from './components/Trajectory';
+import { Skills } from './components/Skills';
+import Footer from './components/Footer';
 
-function App() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
+function AppContent() {
   return (
-    <div className={`min-h-screen transition-colors duration-500 
-                     ${isDarkMode ? 'bg-[#050505] text-slate-300'
-                     : 'bg-[#f4f7f9] text-slate-800'} font-sans
-                     selection:bg-blue-500/30 overflow-x-hidden`
-                    }>
-      <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-      <Header isDarkMode={isDarkMode} />
-      <About isDarkMode={isDarkMode} />
-      <Belt isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
-      <Skills isDarkMode={isDarkMode} />
-      <section className="max-w-7xl mx-auto px-6 py-12 md:py-24 border-t 
-                          border-black/5 dark:border-white/5">
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          <Trajectory isDarkMode={isDarkMode}/>
-          <div className="space-y-12">
-            <Terminal isDarkMode={isDarkMode} />
-            <Projects isDarkMode={isDarkMode} />
-          </div>
-        </div>
-      </section>
-      <Repositories isDarkMode={isDarkMode} />
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 dark:bg-[#090a0f] dark:text-slate-100 font-sans transition-colors duration-300">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] px-4 py-2 bg-blue-600 text-white rounded-xl font-semibold text-xs shadow-lg outline-none ring-2 ring-white"
+      >
+        Pular para o conteúdo principal
+      </a>
+
+      <Navbar />
+
+      <main id="main-content">
+        <Header />
+        <About />
+        <Repositories />
+        <Trajectory />
+        <Skills />
+      </main>
+
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
 

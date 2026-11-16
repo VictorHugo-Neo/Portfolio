@@ -1,6 +1,6 @@
-# 👨‍💻 Victor Hugo Lisboa | Portfolio v2
+# 👨‍💻 Victor Hugo Lisboa | Portfolio
 
-Este é o repositório do meu portfólio profissional, desenvolvido para consolidar minha atuação na intersecção entre o **Desenvolvimento de Software** e a **Análise de Dados**. O projeto foi arquitetado com foco em performance, tipagem estática e design minimalista.
+Este é o repositório do meu portfólio profissional, desenvolvido para consolidar minha atuação na intersecção entre a **Engenharia de Software (Full-Stack)** e a **Docência Técnica**. O projeto foi arquitetado com foco em usabilidade, performance, acessibilidade e design minimalista.
 
 **Acesse em:** [victorhugo.dev.br](https://victorhugo.dev.br)
 
@@ -9,24 +9,25 @@ Este é o repositório do meu portfólio profissional, desenvolvido para consoli
 ## Tecnologias Utilizadas
 
 ### Frontend
-* **React 18** + **Vite**: Framework e build tool de alta performance.
-* **TypeScript**: Garantia de integridade e tipagem em todo o sistema.
-* **Tailwind CSS**: Estilização utilitária com foco em responsividade e Dark Mode nativo.
-* **Lucide React**: Biblioteca de ícones vetoriais.
+* **React 19** + **Vite**: Framework e build tool de alta performance.
+* **TypeScript**: Tipagem estática rigorosa e segurança de contratos.
+* **Tailwind CSS v4**: Estilização utilitária de última geração com Dark Mode nativo via classe e persistência.
+* **Lucide React**: Biblioteca de ícones vetoriais leves e acessíveis.
 
 ### Integrações & Infraestrutura
-* **GitHub API**: Extração em tempo real de metadados e tecnologias dos repositórios.
-* **Vercel**: Deployment contínuo e gestão de infraestrutura global (CDN).
-* **Registro.br**: Gestão de domínio personalizado (.dev.br).
+* **GitHub API**: Sincronização assíncrona de metadados dos repositórios com fallback local contra *rate limit*.
+* **Vercel**: Deployment contínuo e CDN global.
+* **Registro.br**: Domínio personalizado (`victorhugo.dev.br`).
 
 ---
 
 ## Funcionalidades Principais
 
-- **Dark/Light Mode**: Persistência de tema e transições suaves via CSS Transitions.
-- **Curadoria Dinâmica**: Integração com a API do GitHub para exibir projetos específicos através de filtros de normalização de strings.
-- **Arquitetura Modular**: Divisão lógica de componentes (`Navbar`, `Header`, `About`, `Skills`, `Repositories`) para facilitar a manutenção.
-- **SEO & Performance**: Configuração de meta-tags para indexação em motores de busca e otimização de ativos estáticos.
+- **Foco Editorial Minimalista**: Apresentação direta e sem ruído visual para clientes e recrutadores.
+- **Divisão Clara da Trajetória**: Seções paralelas dedicadas para **Serviços & Atuação Profissional** e **Estudos & Formação Acadêmica**.
+- **Dark/Light Mode Persistente**: Armazenamento no `localStorage` e sincronização automática com preferências do sistema.
+- **Acessibilidade Completa (WCAG AA)**: Navegação por teclado, rótulos acessíveis (`aria-label`), anéis de foco visíveis e escala tipográfica legível.
+- **Resiliência de Dados**: Carregamento instantâneo de projetos em produção (*SAEB Analytics*, *MatDiscreta/NumLab*) e publicação científica com tolerância a falhas na API externa.
 
 ---
 
