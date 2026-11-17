@@ -53,10 +53,10 @@ export const Navbar = () => {
   return (
     <>
       <nav 
-        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-white/85 dark:bg-[#090a0f]/85 border-b border-slate-200/80 dark:border-white/10 transition-colors duration-300"
+        className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-[#090a0f] border-b border-slate-200 dark:border-slate-800 transition-colors duration-300"
         aria-label="Navegação principal"
       >
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-7xl xl:max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-12 xl:px-16 h-16 flex items-center justify-between">
           <a
             href="#"
             onClick={handleScrollToTop}
@@ -67,7 +67,7 @@ export const Navbar = () => {
               VH
             </div>
             <span className="font-mono text-sm font-bold tracking-tight text-slate-900 dark:text-white">
-              Lisboa<span className="text-blue-600 dark:text-blue-400">.dev</span>
+              Lisboa<span className="text-blue-600 dark:text-blue-500">.dev</span>
             </span>
           </a>
 
@@ -81,8 +81,8 @@ export const Navbar = () => {
                       href={item.href}
                       className={`text-xs font-semibold uppercase tracking-wider px-3 py-2 rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                         isActive
-                          ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-white/5 font-bold'
-                          : 'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white hover:bg-slate-100/60 dark:hover:bg-white/5'
+                          ? 'text-white bg-blue-600 font-bold shadow-xs'
+                          : 'text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
                       }`}
                       aria-current={isActive ? 'page' : undefined}
                     >
@@ -93,29 +93,29 @@ export const Navbar = () => {
               })}
             </ul>
 
-            <div className="h-4 w-px bg-slate-200 dark:bg-white/10" aria-hidden="true" />
+            <div className="h-4 w-px bg-slate-200 dark:bg-slate-800" aria-hidden="true" />
 
             <button
               onClick={toggleTheme}
-              className="min-w-[40px] min-h-[40px] flex items-center justify-center rounded-xl text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white bg-slate-100 dark:bg-white/5 border border-slate-200/80 dark:border-white/10 hover:border-blue-500/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              className="min-w-[40px] min-h-[40px] flex items-center justify-center rounded-xl text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               aria-label={isDark ? "Mudar para modo claro" : "Mudar para modo escuro"}
             >
-              {isDark ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-slate-700" />}
+              {isDark ? <Sun size={18} className="text-amber-500" /> : <Moon size={18} className="text-slate-700" />}
             </button>
           </div>
 
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={toggleTheme}
-              className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10"
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
               aria-label={isDark ? "Mudar para modo claro" : "Mudar para modo escuro"}
             >
-              {isDark ? <Sun size={20} className="text-amber-400" /> : <Moon size={20} />}
+              {isDark ? <Sun size={20} className="text-amber-500" /> : <Moon size={20} />}
             </button>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               aria-label={isMobileMenuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-nav-menu"
@@ -128,7 +128,7 @@ export const Navbar = () => {
         {isMobileMenuOpen && (
           <div 
             id="mobile-nav-menu"
-            className="md:hidden border-b border-slate-200 dark:border-white/10 bg-white/95 dark:bg-[#090a0f]/95 backdrop-blur-xl px-6 py-5 animate-in fade-in slide-in-from-top-2 duration-200 shadow-xl"
+            className="md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#090a0f] px-6 py-5 shadow-xl"
           >
             <ul className="flex flex-col gap-2">
               {NAV_LINKS.map((item) => {
@@ -141,7 +141,7 @@ export const Navbar = () => {
                       className={`min-h-[48px] flex items-center px-4 rounded-xl text-base font-semibold transition-all ${
                         isActive
                           ? 'bg-blue-600 text-white shadow-sm'
-                          : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/5'
+                          : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
                       }`}
                       aria-current={isActive ? 'page' : undefined}
                     >
@@ -157,7 +157,7 @@ export const Navbar = () => {
 
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-xs md:hidden"
+          className="fixed inset-0 z-40 bg-black/60 md:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
           aria-hidden="true"
         />

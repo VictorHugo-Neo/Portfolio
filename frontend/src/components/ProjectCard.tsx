@@ -15,11 +15,11 @@ export const ProjectCard = ({ repo }: ProjectCardProps) => {
   const targetUrl = liveUrl || repo.html_url;
 
   return (
-    <div className="group relative p-4 sm:p-6 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/10 hover:border-blue-500/50 dark:hover:border-blue-500/40 hover:shadow-md transition-all flex flex-col justify-between">
+    <div className="group relative p-4 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 hover:shadow-sm transition-all flex flex-col justify-between">
       <div className="space-y-3">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-xs flex-shrink-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-800 dark:text-slate-200 shadow-xs flex-shrink-0">
               {liveUrl ? <Globe size={18} /> : <FolderCode size={18} />}
             </div>
             <div>
@@ -27,8 +27,8 @@ export const ProjectCard = ({ repo }: ProjectCardProps) => {
                 {category}
               </span>
               {liveUrl && (
-                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 dark:text-emerald-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-500" />
                   Aplicação no Ar
                 </span>
               )}
@@ -39,7 +39,7 @@ export const ProjectCard = ({ repo }: ProjectCardProps) => {
             href={repo.html_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="min-w-[36px] min-h-[36px] sm:min-w-[40px] sm:min-h-[40px] flex items-center justify-center rounded-xl text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            className="min-w-[36px] min-h-[36px] sm:min-w-[40px] sm:min-h-[40px] flex items-center justify-center rounded-xl text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             aria-label={`Ver código-fonte de ${displayName} no GitHub`}
             title="Ver código no GitHub"
           >
@@ -48,7 +48,7 @@ export const ProjectCard = ({ repo }: ProjectCardProps) => {
         </div>
 
         <div className="space-y-0.5">
-          <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-500 transition-colors">
             <a
               href={targetUrl}
               target="_blank"
@@ -68,7 +68,7 @@ export const ProjectCard = ({ repo }: ProjectCardProps) => {
         </p>
       </div>
 
-      <div className="pt-3 mt-3 sm:pt-4 sm:mt-4 border-t border-slate-200/80 dark:border-white/10 flex items-center justify-between gap-2">
+      <div className="pt-3 mt-3 sm:pt-4 sm:mt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
         <span className={`px-2 py-0.5 rounded-md text-[10px] sm:text-[11px] font-mono font-medium border ${languageClass}`}>
           {repo.language || 'Python'}
         </span>
@@ -88,7 +88,7 @@ export const ProjectCard = ({ repo }: ProjectCardProps) => {
             href={repo.html_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="min-h-[34px] inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-200/80 hover:bg-slate-300 dark:bg-white/10 dark:hover:bg-white/15 text-slate-800 dark:text-slate-200 text-xs font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            className="min-h-[34px] inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700 text-xs font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           >
             Ver Código
             <ExternalLink size={12} />

@@ -1,15 +1,15 @@
 import type { Repository } from '../services/github';
 
 export const languageColors: { [key: string]: string } = {
-  Python: "text-blue-500 bg-blue-500/10 border-blue-500/20",
-  TypeScript: "text-blue-600 bg-blue-600/10 border-blue-600/20",
-  JavaScript: "text-amber-500 bg-amber-500/10 border-amber-500/20",
-  HTML: "text-orange-500 bg-orange-500/10 border-orange-500/20",
-  CSS: "text-purple-500 bg-purple-500/10 border-purple-500/20",
-  React: "text-cyan-500 bg-cyan-500/10 border-cyan-500/20",
-  FastAPI: "text-emerald-500 bg-emerald-500/10 border-emerald-500/20",
-  PostgreSQL: "text-indigo-400 bg-indigo-500/10 border-indigo-500/20",
-  default: "text-slate-400 bg-slate-500/10 border-slate-500/20"
+  Python: "text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700",
+  TypeScript: "text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700",
+  JavaScript: "text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700",
+  HTML: "text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700",
+  CSS: "text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700",
+  React: "text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700",
+  FastAPI: "text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700",
+  PostgreSQL: "text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700",
+  default: "text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700"
 };
 
 export const LIVE_PROJECTS_URLS: { [key: string]: string } = {

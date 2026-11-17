@@ -6,10 +6,10 @@ export const PublicationCard = () => {
   if (!publication) return null;
 
   return (
-    <div className="p-4 sm:p-6 rounded-2xl bg-gradient-to-r from-blue-500/10 via-cyan-500/5 to-transparent border border-blue-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 shadow-xs">
+    <div className="p-4 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 shadow-xs">
       <div className="space-y-1.5 max-w-3xl">
-        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 dark:text-blue-300">
-          <BookOpen size={15} />
+        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-slate-200">
+          <BookOpen size={15} className="text-blue-600 dark:text-blue-500" />
           <span>Publicação Científica — WI-SCI IFNMG</span>
         </div>
         <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
